@@ -54,7 +54,7 @@ const CrmInbox = () => {
 
     const fetchConversations = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/crm/conversations', {
+            const res = await fetch('https://pr-rj.onrender.com/api/crm/conversations', {
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` }
             });
             const data = await res.json();
@@ -74,7 +74,7 @@ const CrmInbox = () => {
 
     const fetchFullConversation = async (id: string) => {
         try {
-            const res = await fetch(`http://localhost:5000/api/crm/conversations/${id}`, {
+            const res = await fetch(`https://pr-rj.onrender.com/api/crm/conversations/${id}`, {
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` }
             });
             const data = await res.json();
@@ -104,7 +104,7 @@ const CrmInbox = () => {
     const handleDelete = async (id: string, e: React.MouseEvent) => {
         e.stopPropagation();
         if (window.confirm("Permanently delete this conversation?")) {
-            await fetch(`http://localhost:5000/api/crm/conversations/${id}`, {
+            await fetch(`https://pr-rj.onrender.com/api/crm/conversations/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` }
             });
@@ -139,7 +139,7 @@ const CrmInbox = () => {
         files.forEach(file => formData.append('attachments', file));
 
         try {
-            const res = await fetch(`http://localhost:5000/api/crm/conversations/${fullConversation._id}/reply`, {
+            const res = await fetch(`https://pr-rj.onrender.com/api/crm/conversations/${fullConversation._id}/reply`, {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` },
                 body: formData
@@ -317,7 +317,7 @@ const CrmInbox = () => {
                                             {msg.attachments.map((file, fIdx) => (
                                                 <a
                                                     key={fIdx}
-                                                    href={`http://localhost:5000${file.path}`}
+                                                    href={`https://pr-rj.onrender.com${file.path}`}
                                                     target="_blank"
                                                     rel="noreferrer"
                                                     className="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 text-xs font-medium text-gray-700 transition-none shadow-sm"

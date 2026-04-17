@@ -46,7 +46,7 @@ const ExperienceDB = () => {
 
     const fetchExperiences = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/portfolio/experiences');
+            const res = await fetch('https://pr-rj.onrender.com/api/portfolio/experiences');
             const data = await res.json();
             if (data.success) setExperiences(data.data);
         } catch (error) {
@@ -68,7 +68,7 @@ const ExperienceDB = () => {
         };
 
         try {
-            const res = await fetch('http://localhost:5000/api/portfolio/experiences', {
+            const res = await fetch('https://pr-rj.onrender.com/api/portfolio/experiences', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ const ExperienceDB = () => {
     const handleDelete = async (id: string) => {
         if (!window.confirm("Delete this experience entry?")) return;
         try {
-            await fetch(`http://localhost:5000/api/portfolio/experiences/${id}`, {
+            await fetch(`https://pr-rj.onrender.com/api/portfolio/experiences/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` }
             });
@@ -101,7 +101,7 @@ const ExperienceDB = () => {
         setExperiences(experiences.map(exp => exp._id === id ? { ...exp, ...updatedData } : exp));
 
         try {
-            await fetch(`http://localhost:5000/api/portfolio/experiences/${id}`, {
+            await fetch(`https://pr-rj.onrender.com/api/portfolio/experiences/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ const ExperienceDB = () => {
 
         const payload = updatedItems.map(item => ({ _id: item._id, order: item.order }));
         try {
-            await fetch('http://localhost:5000/api/portfolio/experiences/reorder', {
+            await fetch('https://pr-rj.onrender.com/api/portfolio/experiences/reorder', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -153,7 +153,7 @@ const ExperienceDB = () => {
         formData.append('image', file);
 
         try {
-            const res = await fetch('http://localhost:5000/api/portfolio/upload', {
+            const res = await fetch('https://pr-rj.onrender.com/api/portfolio/upload', {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` },
                 body: formData
