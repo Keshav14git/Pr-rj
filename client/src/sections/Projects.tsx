@@ -227,7 +227,7 @@ const Projects = () => {
                     const exp = experiences[mobileCardIndex];
                     if (!exp) return null;
                     return (
-                      <div className="w-full h-full border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.15)] rounded-2xl p-5 bg-[#0A0A0A] flex flex-col justify-between cursor-pointer active:bg-black transition-colors">
+                      <div className="w-full h-full border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.15)] rounded-2xl p-5 bg-[#1E1E1E] flex flex-col justify-between cursor-pointer active:bg-black transition-colors">
                         {/* Top */}
                         <div>
                           <div className="flex items-center gap-3 mb-4">

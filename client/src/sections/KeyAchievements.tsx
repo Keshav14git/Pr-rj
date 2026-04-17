@@ -185,7 +185,7 @@ const KeyAchievements = () => {
             MOBILE ACCORDION LAYOUT (< lg) 
         ========================================= */}
         <div className="lg:hidden w-full px-5 pb-8">
-          <div className="flex flex-col bg-[#0A0A0A] border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.15)] rounded-2xl p-2">
+          <div className="flex flex-col bg-[#1E1E1E] border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.15)] rounded-2xl p-2">
             {ACHIEVEMENTS.map((item, index) => {
               const isActive = index === mobileActiveIndex;
 

@@ -34,6 +34,21 @@ const Typewriter = ({ text, delay = 0, className = "" }: { text: string; delay?:
 const MobileAbout = () => {
     return (
         <section id="about" className="relative w-full bg-white px-6 py-16">
+
+            {/* Centered Section Heading — matches Expertise, Contact, etc. */}
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="flex flex-col items-center mb-10"
+            >
+                <h2 className="text-center tracking-[0.2em] font-bold text-xl text-black uppercase">
+                    Profile
+                </h2>
+                <div className="w-16 h-px bg-black mx-auto mt-4 opacity-30" />
+            </motion.div>
+
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -41,12 +56,6 @@ const MobileAbout = () => {
                 transition={{ duration: 1, ease: EASE_EXPO }}
                 className="flex flex-col gap-5"
             >
-                {/* Section Label */}
-                <div className="flex items-center gap-3">
-                    <div className="w-8 h-px bg-black/30" />
-                    <span className="text-[10px] uppercase tracking-[0.3em] text-black/40 font-bold">Profile</span>
-                </div>
-
                 {/* Main Bio */}
                 <p className="text-xl font-bold text-black leading-[1.45] tracking-tight">
                     I am a Project Manager specializing in interior fit-out and turnkey projects, with over 11 years of experience delivering retail, commercial, and institutional spaces.
@@ -57,11 +66,8 @@ const MobileAbout = () => {
                     My work involves managing project execution, coordinating with designers, contractors, and vendors, and ensuring every stage aligns with quality, budget, and schedule expectations.
                 </p>
 
-                {/* Divider */}
-                <div className="w-full h-px bg-black/10 my-1" />
-
-                {/* Education */}
-                <div className="flex flex-col gap-3">
+                {/* Education — pushed down with extra top margin */}
+                <div className="flex flex-col gap-3 mt-6 pt-5 border-t border-black/10">
                     <span className="text-[9px] uppercase tracking-[0.2em] text-black/30 font-bold">Academic Foundation</span>
 
                     <motion.div

@@ -43,12 +43,36 @@ const EXPERTISE_DATA = [
 
 const MobileKinematicDeck = () => {
     const [frontIndex, setFrontIndex] = useState(0);
+    const [exitDirection, setExitDirection] = useState<number>(0);
+    const [isDragging, setIsDragging] = useState(false);
+    const autoTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+    // Auto-shuffle every 4 seconds, pause while dragging
+    useEffect(() => {
+        if (autoTimerRef.current) clearInterval(autoTimerRef.current);
+        autoTimerRef.current = setInterval(() => {
+            if (!isDragging) {
+                setExitDirection(-1);
+                setTimeout(() => {
+                    setFrontIndex(prev => (prev + 1) % EXPERTISE_DATA.length);
+                    setExitDirection(0);
+                }, 200);
+            }
+        }, 4000);
+        return () => { if (autoTimerRef.current) clearInterval(autoTimerRef.current); };
+    }, [isDragging]);
 
     const handleDragEnd = (_event: any, info: PanInfo) => {
-        const threshold = 50;
-        if (info.offset.x < -threshold || info.offset.x > threshold) {
-            // They swiped far enough! Advance the deck
-            setFrontIndex(prev => (prev + 1) % EXPERTISE_DATA.length);
+        setIsDragging(false);
+        const swipe = Math.abs(info.velocity.x) > 300 || Math.abs(info.offset.x) > 80;
+        if (swipe) {
+            // Reset auto-timer on manual swipe
+            if (autoTimerRef.current) clearInterval(autoTimerRef.current);
+            setExitDirection(info.offset.x > 0 ? 1 : -1);
+            setTimeout(() => {
+                setFrontIndex(prev => (prev + 1) % EXPERTISE_DATA.length);
+                setExitDirection(0);
+            }, 200);
         }
     };
 
@@ -81,17 +105,26 @@ const MobileKinematicDeck = () => {
                             className={`absolute inset-0 rounded-3xl bg-[#1E1E1E] shadow-2xl flex flex-col justify-between p-6 cursor-grab active:cursor-grabbing border-t border-white/10 ${isFront ? '' : 'pointer-events-none'}`}
                             initial={false}
                             animate={{
-                                scale: 1 - position * 0.05,
-                                y: position * 18,
+                                scale: 1 - position * 0.04,
+                                y: position * 14,
+                                x: isFront && exitDirection ? exitDirection * 400 : 0,
+                                rotate: isFront && exitDirection ? exitDirection * 15 : 0,
                                 zIndex: EXPERTISE_DATA.length - position,
                                 opacity: position >= 3 ? 0 : 1 - position * 0.15,
                             }}
-                            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 180,
+                                damping: 22,
+                                mass: 0.8,
+                            }}
                             drag={isFront ? "x" : false}
                             dragConstraints={{ left: 0, right: 0 }}
-                            dragElastic={0.8}
+                            dragElastic={0.6}
+                            onDragStart={isFront ? () => setIsDragging(true) : undefined}
                             onDragEnd={isFront ? handleDragEnd : undefined}
-                            whileTap={isFront ? { scale: 0.98 } : {}}
+                            whileDrag={{ rotate: 0, scale: 1.02 }}
+                            style={isFront ? { cursor: 'grab' } : {}}
                         >
                             {/* Glass gradient overlay */}
                             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
