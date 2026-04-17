@@ -54,12 +54,116 @@ const AnimatedCounter = ({ target, suffix = '', delay = 0 }: { target: number; s
     return <>{display}{suffix}</>;
 };
 
+// ─── MOBILE HERO: Photo background + white text overlay ──────────
 
-const Hero = ({ onNavigate }: HeroProps) => {
+const MobileHero = ({ onNavigate }: HeroProps) => {
     return (
-        <section className="h-[100dvh] w-full overflow-hidden bg-white text-black flex flex-col p-3 md:p-6 lg:p-8 relative">
+        <section className="h-[100dvh] w-full overflow-hidden relative flex flex-col">
 
-            {/* The Global Navigation Component */}
+            <NavigationMenu onNavigate={onNavigate} />
+
+            {/* Full-bleed background photo */}
+            <motion.div
+                className="absolute inset-0 z-0"
+                initial={{ scale: 1.1, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1.6, ease: EASE_EXPO }}
+            >
+                <img
+                    src="/rj.png"
+                    alt="Rohit Jangra"
+                    className="w-full h-full object-cover object-[center_10%]"
+                />
+                {/* Dark gradient overlay — heavier at bottom for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/20" />
+            </motion.div>
+
+            {/* Content overlay */}
+            <div className="relative z-10 flex-1 flex flex-col justify-between p-5 pt-3">
+
+                {/* Top: Name */}
+                <div className="overflow-hidden">
+                    <motion.div
+                        initial={{ y: '100%', opacity: 0 }}
+                        animate={{ y: '0%', opacity: 1 }}
+                        transition={{ duration: 0.9, delay: 0.1, ease: EASE_EXPO }}
+                        className="text-sm tracking-[0.2em] font-medium uppercase text-white/80 leading-none"
+                    >
+                        Rohit Jangra
+                    </motion.div>
+                </div>
+
+                {/* Bottom: Headline + Stats */}
+                <div className="flex flex-col gap-6">
+                    {/* Headline */}
+                    <h1 className="text-[2.75rem] font-black text-white leading-[0.95] tracking-tighter">
+                        <LineReveal delay={0.35}>
+                            Project Manager:
+                        </LineReveal>
+                        <LineReveal delay={0.5}>
+                            <span>Interior fit-out </span>
+                            <motion.span
+                                className="text-white/40 inline-block"
+                                initial={{ opacity: 0, scale: 0.6, filter: 'blur(8px)' }}
+                                animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                                transition={{ duration: 0.8, delay: 1.0, ease: EASE_SMOOTH }}
+                            >
+                                &amp;
+                            </motion.span>
+                        </LineReveal>
+                        <LineReveal delay={0.65}>
+                            turnkey execution.
+                        </LineReveal>
+                    </h1>
+
+                    {/* Authority + Stats row */}
+                    <div className="flex flex-col gap-4">
+                        <motion.p
+                            className="text-white/60 text-sm leading-relaxed"
+                            initial={{ opacity: 0, y: 16 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 1.2, ease: EASE_SMOOTH }}
+                        >
+                            <strong className="text-white">11+ years</strong> delivering retail and commercial fit-out projects. Leading multi-site execution with surgical precision.
+                        </motion.p>
+
+                        <div className="grid grid-cols-2 gap-4">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 1.4, ease: EASE_EXPO }}
+                            >
+                                <p className="text-3xl font-bold text-white tracking-tighter leading-none">
+                                    <AnimatedCounter target={11} delay={1.5} />
+                                    <span className="text-white/30">+</span>
+                                </p>
+                                <p className="text-[9px] uppercase tracking-widest text-white/40 mt-1">Years Active</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 1.6, ease: EASE_EXPO }}
+                            >
+                                <p className="text-3xl font-bold text-white tracking-tighter leading-none">
+                                    <AnimatedCounter target={32} delay={1.7} />
+                                    <span className="text-white/30">+</span>
+                                </p>
+                                <p className="text-[9px] uppercase tracking-widest text-white/40 mt-1">Projects Done</p>
+                            </motion.div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+// ─── DESKTOP HERO: Original white layout (preserved) ─────────────
+
+const DesktopHero = ({ onNavigate }: HeroProps) => {
+    return (
+        <section className="h-[100dvh] w-full overflow-hidden bg-white text-black flex flex-col p-6 lg:p-8 relative">
+
             <NavigationMenu onNavigate={onNavigate} />
 
             {/* Subtle full-screen fade from slightly warm white */}
@@ -74,13 +178,13 @@ const Hero = ({ onNavigate }: HeroProps) => {
             <div className="flex-1 w-full min-h-0 relative flex flex-col overflow-hidden z-10">
 
                 {/* Top Section: Logo / Navigation Area */}
-                <header className="shrink-0 flex justify-between items-center p-1 md:p-6 lg:p-8">
+                <header className="shrink-0 flex justify-between items-center p-6 lg:p-8">
                     <div className="overflow-hidden">
                         <motion.div
                             initial={{ y: '100%', opacity: 0 }}
                             animate={{ y: '0%', opacity: 1 }}
                             transition={{ duration: 0.9, delay: 0.1, ease: EASE_EXPO }}
-                            className="text-sm md:text-base tracking-[0.2em] font-medium uppercase text-black leading-none"
+                            className="text-base tracking-[0.2em] font-medium uppercase text-black leading-none"
                         >
                             Rohit Jangra
                         </motion.div>
@@ -88,12 +192,12 @@ const Hero = ({ onNavigate }: HeroProps) => {
                 </header>
 
                 {/* Main Content Area */}
-                <main className="flex-1 min-h-0 flex flex-col justify-end md:justify-center px-4 md:px-6 lg:px-12 pb-6 md:py-6 lg:py-8 w-full">
-                    <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 md:gap-16 lg:gap-16 w-full max-w-7xl mx-auto lg:items-center">
+                <main className="flex-1 min-h-0 flex flex-col justify-center px-6 lg:px-12 py-6 lg:py-8 w-full">
+                    <div className="flex lg:grid lg:grid-cols-12 gap-16 w-full max-w-7xl mx-auto lg:items-center">
 
                         {/* Power Headline Area */}
                         <div className="lg:col-span-8 flex flex-col justify-center">
-                            <h1 className="text-[3.25rem] sm:text-6xl lg:text-[clamp(4.5rem,6.5vw,6.5rem)] font-black text-black leading-[0.95] tracking-tighter">
+                            <h1 className="text-6xl lg:text-[clamp(4.5rem,6.5vw,6.5rem)] font-black text-black leading-[1.05] tracking-tighter">
                                 <LineReveal delay={0.35}>
                                     Project Manager:
                                 </LineReveal>
@@ -115,10 +219,10 @@ const Hero = ({ onNavigate }: HeroProps) => {
                         </div>
 
                         {/* Technical / Authority Info */}
-                        <div className="lg:col-span-4 flex flex-col lg:justify-between lg:h-[80%] pt-0 lg:pt-0 lg:pl-12 gap-4 md:gap-8">
-                            <div className="flex flex-col justify-center flex-1 text-sm md:text-base lg:text-lg min-h-0">
+                        <div className="lg:col-span-4 flex flex-col lg:justify-between lg:h-[80%] lg:pl-12 gap-8">
+                            <div className="flex flex-col justify-center flex-1 text-base lg:text-lg min-h-0">
                                 {/* Animated horizontal rule */}
-                                <h2 className="text-[10px] lg:text-xs uppercase tracking-widest text-black/40 font-semibold mb-3 lg:mb-5 flex items-center gap-4">
+                                <h2 className="text-xs uppercase tracking-widest text-black/40 font-semibold mb-5 flex items-center gap-4">
                                     <motion.span
                                         className="h-[1px] bg-black/20 block"
                                         initial={{ width: 0 }}
@@ -134,7 +238,7 @@ const Hero = ({ onNavigate }: HeroProps) => {
                                     </motion.span>
                                 </h2>
                                 <motion.p
-                                    className="text-black/70 leading-relaxed md:max-w-sm"
+                                    className="text-black/70 leading-relaxed max-w-sm"
                                     initial={{ opacity: 0, y: 16, filter: 'blur(6px)' }}
                                     animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                                     transition={{ duration: 1, delay: 1.4, ease: EASE_SMOOTH }}
@@ -143,14 +247,13 @@ const Hero = ({ onNavigate }: HeroProps) => {
                                 </motion.p>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4 lg:gap-8 pt-2 md:pt-4 shrink-0">
-                                {/* Stat 1 */}
+                            <div className="grid grid-cols-2 gap-8 pt-4 shrink-0">
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: 1.6, ease: EASE_EXPO }}
                                 >
-                                    <p className="text-3xl lg:text-4xl xl:text-5xl font-bold text-black tracking-tighter mb-1 leading-none">
+                                    <p className="text-4xl xl:text-5xl font-bold text-black tracking-tighter mb-1 leading-none">
                                         <AnimatedCounter target={11} delay={1.7} />
                                         <motion.span
                                             className="text-black/30"
@@ -160,7 +263,7 @@ const Hero = ({ onNavigate }: HeroProps) => {
                                         >+</motion.span>
                                     </p>
                                     <motion.p
-                                        className="text-[9px] lg:text-[10px] uppercase tracking-widest text-black/40 leading-tight mt-1"
+                                        className="text-[10px] uppercase tracking-widest text-black/40 leading-tight mt-1"
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         transition={{ duration: 0.6, delay: 2.0 }}
@@ -169,13 +272,12 @@ const Hero = ({ onNavigate }: HeroProps) => {
                                     </motion.p>
                                 </motion.div>
 
-                                {/* Stat 2 */}
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: 1.8, ease: EASE_EXPO }}
                                 >
-                                    <p className="text-3xl lg:text-4xl xl:text-5xl font-bold text-black tracking-tighter mb-1 leading-none">
+                                    <p className="text-4xl xl:text-5xl font-bold text-black tracking-tighter mb-1 leading-none">
                                         <AnimatedCounter target={32} delay={1.9} />
                                         <motion.span
                                             className="text-black/30"
@@ -185,7 +287,7 @@ const Hero = ({ onNavigate }: HeroProps) => {
                                         >+</motion.span>
                                     </p>
                                     <motion.p
-                                        className="text-[9px] lg:text-[10px] uppercase tracking-widest text-black/40 leading-tight mt-1"
+                                        className="text-[10px] uppercase tracking-widest text-black/40 leading-tight mt-1"
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         transition={{ duration: 0.6, delay: 2.2 }}
@@ -202,6 +304,23 @@ const Hero = ({ onNavigate }: HeroProps) => {
 
         </section>
     );
+};
+
+// ─── Root: Switch based on screen width ──────────────────────────
+
+const Hero = ({ onNavigate, initialMenuOpen }: HeroProps) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth < 1024);
+        check();
+        window.addEventListener('resize', check);
+        return () => window.removeEventListener('resize', check);
+    }, []);
+
+    return isMobile
+        ? <MobileHero onNavigate={onNavigate} initialMenuOpen={initialMenuOpen} />
+        : <DesktopHero onNavigate={onNavigate} initialMenuOpen={initialMenuOpen} />;
 };
 
 export default Hero;
