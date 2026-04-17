@@ -31,7 +31,7 @@ const AdminDashboard = () => {
   const fetchStats = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await fetch('/api/portfolio/stats', {
+      const res = await fetch('https://pr-rj.onrender.com/api/portfolio/stats', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.ok) {

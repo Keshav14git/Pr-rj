@@ -58,7 +58,7 @@ function CtaLinkAutocomplete({ value, onChange }: { value: string, onChange: (v:
 
   useEffect(() => {
     // Fetch live experiences from database for / autocomplete
-    fetch('/api/portfolio/experiences')
+    fetch('https://pr-rj.onrender.com/api/portfolio/experiences')
       .then(res => res.json())
       .then(data => {
         if (data && data.success && data.data) {

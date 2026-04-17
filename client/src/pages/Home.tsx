@@ -16,7 +16,7 @@ function Home() {
 
   // Fetch dynamically built CMS sections on mount
   useEffect(() => {
-    fetch('/api/portfolio/sections')
+    fetch('https://pr-rj.onrender.com/api/portfolio/sections')
       .then(res => res.json())
       .then(data => {
          if (data.success) setCustomSections(data.data);

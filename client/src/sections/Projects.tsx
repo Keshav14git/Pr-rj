@@ -130,7 +130,7 @@ const Projects = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('/api/portfolio/experiences');
+        const res = await fetch('https://pr-rj.onrender.com/api/portfolio/experiences');
         if (res.ok) {
           const data = await res.json();
           if (data.data && data.data.length > 0) {

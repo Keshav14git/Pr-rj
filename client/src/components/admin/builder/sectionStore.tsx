@@ -258,7 +258,7 @@ export function BuilderProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch('/api/portfolio/sections');
+        const res = await fetch('https://pr-rj.onrender.com/api/portfolio/sections');
         if (res.ok) {
           const data = await res.json();
           const normalized = (data.data || []).map(normalizeLegacySection);
@@ -298,7 +298,7 @@ export function BuilderProvider({ children }: { children: React.ReactNode }) {
         if (isTemp) {
           // Create new section on server
           const { _id, ...rest } = section;
-          const res = await fetch('/api/portfolio/sections', {
+          const res = await fetch('https://pr-rj.onrender.com/api/portfolio/sections', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
             body: JSON.stringify(rest),
@@ -310,7 +310,7 @@ export function BuilderProvider({ children }: { children: React.ReactNode }) {
           }
         } else {
           // Update existing section
-          await fetch(`/api/portfolio/sections/${section._id}`, {
+          await fetch(`https://pr-rj.onrender.com/api/portfolio/sections/${section._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
             body: JSON.stringify(section),
@@ -319,7 +319,7 @@ export function BuilderProvider({ children }: { children: React.ReactNode }) {
       }
 
       // Re-fetch to sync IDs
-      const res = await fetch('/api/portfolio/sections');
+      const res = await fetch('https://pr-rj.onrender.com/api/portfolio/sections');
       if (res.ok) {
         const data = await res.json();
         const normalized = (data.data || []).map(normalizeLegacySection);
@@ -342,7 +342,7 @@ export function BuilderProvider({ children }: { children: React.ReactNode }) {
     // Try to persist to server
     try {
       const token = getToken();
-      const res = await fetch('/api/portfolio/sections', {
+      const res = await fetch('https://pr-rj.onrender.com/api/portfolio/sections', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify(section),
@@ -365,7 +365,7 @@ export function BuilderProvider({ children }: { children: React.ReactNode }) {
     if (!id.startsWith('temp_')) {
       try {
         const token = getToken();
-        await fetch(`/api/portfolio/sections/${id}`, {
+        await fetch(`https://pr-rj.onrender.com/api/portfolio/sections/${id}`, {
           method: 'DELETE',
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -388,7 +388,7 @@ export function BuilderProvider({ children }: { children: React.ReactNode }) {
       const token = getToken();
       const { _id, ...rest } = original;
       const clone = { ...rest, name: `${original.name} (Copy)`, order: stateRef.current.sections.length };
-      const res = await fetch('/api/portfolio/sections', {
+      const res = await fetch('https://pr-rj.onrender.com/api/portfolio/sections', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify(clone),
@@ -407,7 +407,7 @@ export function BuilderProvider({ children }: { children: React.ReactNode }) {
     formData.append('image', file);
     try {
       const token = getToken();
-      const res = await fetch('/api/portfolio/upload', {
+      const res = await fetch('https://pr-rj.onrender.com/api/portfolio/upload', {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
