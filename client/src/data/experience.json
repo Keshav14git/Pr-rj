@@ -1,0 +1,276 @@
+[
+  {
+    "id": 1,
+    "company": "Bhaane Retail Pvt. Ltd.",
+    "role": "Assistant Project Manager – Fit-Out",
+    "duration": "Dec 2025 – Present",
+    "location": "India",
+    "responsibilities": [
+      "Supported end-to-end execution of retail interior fit-out projects from design development to final handover.",
+      "Coordinated with designers, consultants, contractors, and vendors for smooth project execution.",
+      "Assisted in project planning, scheduling, and milestone tracking.",
+      "Monitored site progress, workmanship quality, and compliance with approved drawings.",
+      "Prepared cost plans, tracked project budgets, and reviewed vendor quotations.",
+      "Conducted site inspections, snagging checks, and handover documentation.",
+      "Coordinated MEP, civil, joinery, and FF&E installations.",
+      "Ensured health, safety, and regulatory compliance at project sites.",
+      "Resolved site issues and design coordination challenges efficiently."
+    ],
+    "projects": [
+      {
+        "name": "Nike Brand Store",
+        "location": "VIP Road, Surat, Gujarat",
+        "images": []
+      },
+      {
+        "name": "Nike Brand Store",
+        "location": "Sindhu Bhawan Road, Ahmedabad, Gujarat",
+        "images": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "company": "Reliance Projects & Property Management Services Ltd.",
+    "role": "Deputy Project Manager",
+    "duration": "Mar 2023 – Dec 2025",
+    "location": "India",
+    "responsibilities": [
+      "Led complete execution of interior fit-out projects across multiple retail sites.",
+      "Developed project work plans and delegated tasks across teams.",
+      "Managed multiple sites simultaneously while ensuring timely delivery.",
+      "Implemented ISO-9001 based quality management systems.",
+      "Conducted technical evaluation of vendor quotations and procurement proposals.",
+      "Supervised subcontractors and enforced quality standards.",
+      "Maintained inspection reports and quality documentation."
+    ],
+    "projects": [
+      {
+        "name": "Reliance Premium Azorte Store",
+        "location": "Alpha One Mall, Amritsar",
+        "images": []
+      },
+      {
+        "name": "Reliance GAP Store",
+        "location": "VR Ambarsar Mall, Amritsar",
+        "images": []
+      },
+      {
+        "name": "Reliance Tira Outlet",
+        "location": "Mall of Asia, Bangalore",
+        "images": []
+      },
+      {
+        "name": "Reliance Jewellery Store",
+        "location": "Fountain Chowk, Ludhiana",
+        "images": []
+      },
+      {
+        "name": "Reliance Yousta Store",
+        "location": "New Jawahar Nagar, Jalandhar",
+        "images": []
+      },
+      {
+        "name": "Reliance Digital",
+        "location": "Kunjwani Bypass, Jammu",
+        "images": []
+      },
+      {
+        "name": "Reliance Smart Bazaar",
+        "location": "Silver Arc Mall, Ludhiana",
+        "images": []
+      },
+      {
+        "name": "Reliance Trends",
+        "location": "Opposite Railway Station, Moga",
+        "images": []
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "company": "Cars24 Services Pvt. Ltd.",
+    "role": "Site Engineer",
+    "duration": "Jun 2022 – Mar 2023",
+    "location": "Bangalore, India",
+    "responsibilities": [
+      "Executed site fit-out activities based on approved BOQ and technical drawings.",
+      "Coordinated multidisciplinary teams for efficient project workflow.",
+      "Implemented site safety procedures and compliance standards.",
+      "Certified quantities and maintained project documentation.",
+      "Served as liaison between project departments for communication efficiency."
+    ],
+    "projects": [
+      {
+        "name": "Cars24 Parking Yard & CEC Office",
+        "location": "Garuda Mall, Bangalore",
+        "images": []
+      },
+      {
+        "name": "Cars24 Parking Yard & CEC Office",
+        "location": "Bhoruka Tech Park, Bangalore",
+        "images": []
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "company": "Tech Connect Infra Pvt. Ltd.",
+    "role": "Project Manager",
+    "duration": "Jan 2017 – May 2022",
+    "location": "India",
+    "responsibilities": [
+      "Managed procurement, vendor coordination, and project logistics.",
+      "Conducted market research to identify tenders and project opportunities.",
+      "Prepared tender documentation and submission packages.",
+      "Prepared Bills of Materials (BOM) and coordinated material procurement.",
+      "Supervised site activities and labour deployment.",
+      "Ensured project completion within scope, budget, and timeline."
+    ],
+    "projects": [
+      {
+        "name": "Byju’s Tuition Centre",
+        "location": "Panchkula",
+        "images": []
+      },
+      {
+        "name": "Ashoka University Hostel & Academic Blocks",
+        "location": "Sonipat",
+        "images": []
+      },
+      {
+        "name": "ITPO Complex Redevelopment Model",
+        "location": "Pragati Maidan, New Delhi",
+        "images": []
+      },
+      {
+        "name": "AceTech 2017 Exhibition",
+        "location": "Pragati Maidan, New Delhi",
+        "images": []
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "company": "Satin Neo Dimensions Pvt. Ltd.",
+    "role": "Site Engineer",
+    "duration": "Oct 2015 – Dec 2016",
+    "location": "India",
+    "responsibilities": [
+      "Supervised contractor activities and site workforce operations.",
+      "Planned work schedules and resource allocation based on project milestones.",
+      "Coordinated with stakeholders to resolve site issues.",
+      "Prepared progress reports and communicated updates to management."
+    ],
+    "projects": [
+      {
+        "name": "Grohe & American Standard Display Showroom",
+        "location": "Indore",
+        "images": []
+      },
+      {
+        "name": "Hindware Lacasa Live Display Showroom",
+        "location": "Bangalore",
+        "images": []
+      },
+      {
+        "name": "Cinnabon & Auntie Anne’s Restaurants",
+        "location": "Logix City Centre Mall, Noida",
+        "images": []
+      },
+      {
+        "name": "Satin Neo Dimensions Office",
+        "location": "Sector 44, Gurgaon",
+        "images": []
+      },
+      {
+        "name": "Satin Credit Care Office",
+        "location": "Kanchenjunga Building, Connaught Place, Delhi",
+        "images": []
+      },
+      {
+        "name": "Delhi Metro Rail Corporation Navigation Installations",
+        "location": "Delhi Gate, Jama Masjid, Lal Quila & Kashmiri Gate Stations",
+        "images": []
+      },
+      {
+        "name": "Hindware Galleries",
+        "location": "Mysore, Chennai, Kerala",
+        "images": []
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "company": "Insta Exhibition Pvt. Ltd.",
+    "role": "Project Officer",
+    "duration": "Aug 2014 – Sep 2015",
+    "location": "India",
+    "responsibilities": [
+      "Managed manpower, materials, and installation for exhibitions and trade shows.",
+      "Coordinated vendor relationships and ensured on-site schedule adherence.",
+      "Ensured installations matched design drawings and timelines."
+    ],
+    "projects": [
+      {
+        "name": "Tata Zest Launch Event",
+        "location": "Ambience Mall, Gurgaon",
+        "images": []
+      },
+      {
+        "name": "Urban Mobility India 2014 – Allison Transmission",
+        "location": "Manekshaw Centre, Delhi",
+        "images": []
+      },
+      {
+        "name": "Samsung Smart Learning Display",
+        "location": "Habitat Centre, Delhi",
+        "images": []
+      },
+      {
+        "name": "BC India 2015 – Scania",
+        "location": "Expo Mart, Greater Noida",
+        "images": []
+      },
+      {
+        "name": "Bus & Special Vehicle Expo – Allison Transmission",
+        "location": "Expo Mart, Greater Noida",
+        "images": []
+      },
+      {
+        "name": "Acetech 2015 – Astral Pipes",
+        "location": "Ahmedabad",
+        "images": []
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "company": "Essentia Environment (Adream India Pvt. Ltd.)",
+    "role": "Site Supervisor (Internship)",
+    "duration": "6 Months",
+    "location": "India",
+    "responsibilities": [
+      "Assisted in daily site supervision and contractor coordination.",
+      "Monitored material usage and supported fit-out project execution.",
+      "Ensured site safety, cleanliness, and progress tracking."
+    ],
+    "projects": [
+      {
+        "name": "Magnolia Residential Flats",
+        "location": "Gurgaon",
+        "images": []
+      },
+      {
+        "name": "Audi Premium Showroom",
+        "location": "Connaught Place, New Delhi",
+        "images": []
+      },
+      {
+        "name": "Dhaba – The Claridges Restaurant",
+        "location": "Cyber City, Gurgaon",
+        "images": []
+      }
+    ]
+  }
+]

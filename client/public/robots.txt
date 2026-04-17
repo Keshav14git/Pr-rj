@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# Block crawlers from API-proxied paths
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://rohitjangra.netlify.app/sitemap.xml
