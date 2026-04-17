@@ -53,9 +53,9 @@ const MobileKinematicDeck = () => {
     };
 
     return (
-        <section className="relative h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden bg-white px-5 font-sans">
+        <section className="relative min-h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden bg-white px-5 py-10 font-sans">
             {/* Title Header */}
-            <div className="absolute top-20 left-0 right-0 z-20 pointer-events-none flex flex-col items-center">
+            <div className="shrink-0 z-20 flex flex-col items-center mb-8">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ const MobileKinematicDeck = () => {
             </div>
 
             {/* Deck Container */}
-            <div className="relative w-full max-w-sm aspect-[3/4] mt-12 z-10">
+            <div className="relative w-full max-w-sm aspect-[4/5] z-10">
                 {EXPERTISE_DATA.map((item, i) => {
                     const position = (i - frontIndex + EXPERTISE_DATA.length) % EXPERTISE_DATA.length;
                     const isFront = position === 0;
@@ -78,7 +78,7 @@ const MobileKinematicDeck = () => {
                     return (
                         <motion.div
                             key={item.id}
-                            className={`absolute inset-0 rounded-3xl bg-[#1E1E1E] shadow-2xl flex flex-col p-6 cursor-grab active:cursor-grabbing border-t border-white/10 ${isFront ? '' : 'pointer-events-none'}`}
+                            className={`absolute inset-0 rounded-3xl bg-[#1E1E1E] shadow-2xl flex flex-col justify-between p-6 cursor-grab active:cursor-grabbing border-t border-white/10 ${isFront ? '' : 'pointer-events-none'}`}
                             initial={false}
                             animate={{
                                 scale: 1 - position * 0.05,
@@ -102,7 +102,7 @@ const MobileKinematicDeck = () => {
                             <h3 className="relative z-10 font-bold uppercase tracking-[0.1em] leading-tight text-white text-xl mb-3">
                                 {item.title}
                             </h3>
-                            <p className="relative z-10 text-white/60 text-sm font-medium leading-relaxed mb-6">
+                            <p className="relative z-10 text-white/60 text-sm font-medium leading-relaxed">
                                 {item.desc}
                             </p>
                             

@@ -28,7 +28,7 @@ const Typewriter = ({ text, delay = 0, className = "" }: { text: string; delay?:
 
 const About = () => {
     return (
-        <section id="about" className="relative min-h-[100dvh] lg:h-[100dvh] w-full overflow-hidden flex flex-col pt-16 lg:pt-0 bg-white">
+        <section id="about" className="relative min-h-[100dvh] lg:h-[100dvh] w-full overflow-hidden flex flex-col bg-white">
 
             {/* Blended Portrait Background */}
             <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -70,7 +70,7 @@ const About = () => {
             </div>
 
             {/* Split Screen Layout Container */}
-            <div className="relative z-10 flex flex-col lg:flex-row w-full h-full pt-8 md:pt-12 lg:pt-24">
+            <div className="relative z-10 flex flex-col lg:flex-row w-full flex-1 pt-20 md:pt-12 lg:pt-24">
 
                 {/* Massive "11" Watermark Overlay */}
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 font-black text-[50vh] lg:text-[100vh] text-black/[0.03] leading-none tracking-tighter pointer-events-none select-none z-0">
@@ -78,7 +78,7 @@ const About = () => {
                 </div>
 
                 {/* Left Side: The Narrative */}
-                <div className="w-full lg:w-1/2 h-full flex flex-col justify-center px-5 md:px-6 lg:px-24 xl:px-32 relative z-10 border-b lg:border-b-0 border-black/10">
+                <div className="w-full lg:w-1/2 h-full flex flex-col justify-center px-5 md:px-6 lg:px-24 xl:px-32 relative z-10 border-b lg:border-b-0 border-black/10 py-6 lg:py-0">
 
                     {/* Centered Separator Line */}
                     <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-[60%] bg-black/10 pointer-events-none" />
@@ -88,7 +88,7 @@ const About = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-10%" }}
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                        className="flex flex-col gap-4 md:gap-6 lg:gap-8 max-w-2xl py-3 md:py-4"
+                        className="flex flex-col gap-3 md:gap-6 lg:gap-8 max-w-2xl py-2 md:py-4"
                     >
                         {/* Header */}
                         <div className="font-mono text-[10px] lg:text-xs uppercase tracking-[0.3em] text-black/50 font-bold">

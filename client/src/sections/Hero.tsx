@@ -88,12 +88,12 @@ const Hero = ({ onNavigate }: HeroProps) => {
                 </header>
 
                 {/* Main Content Area */}
-                <main className="flex-1 min-h-0 flex flex-col justify-center px-5 md:px-6 lg:px-12 py-4 md:py-6 lg:py-8 w-full">
-                    <div className="flex flex-col lg:grid lg:grid-cols-12 gap-12 md:gap-16 lg:gap-16 w-full max-w-7xl mx-auto h-full lg:items-center justify-center lg:justify-start">
+                <main className="flex-1 min-h-0 flex flex-col justify-center px-5 md:px-6 lg:px-12 py-2 md:py-6 lg:py-8 w-full">
+                    <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 md:gap-16 lg:gap-16 w-full max-w-7xl mx-auto h-full lg:items-center justify-center lg:justify-start">
 
                         {/* Power Headline Area */}
                         <div className="lg:col-span-8 flex flex-col justify-center">
-                            <h1 className="text-[2.75rem] sm:text-6xl lg:text-[clamp(4.5rem,6.5vw,6.5rem)] font-black text-black leading-[1.05] tracking-tighter">
+                            <h1 className="text-[3.25rem] sm:text-6xl lg:text-[clamp(4.5rem,6.5vw,6.5rem)] font-black text-black leading-[0.95] tracking-tighter">
                                 <LineReveal delay={0.35}>
                                     Project Manager:
                                 </LineReveal>
@@ -115,7 +115,7 @@ const Hero = ({ onNavigate }: HeroProps) => {
                         </div>
 
                         {/* Technical / Authority Info */}
-                        <div className="lg:col-span-4 flex flex-col lg:justify-between lg:h-[80%] pt-2 lg:pt-0 lg:pl-12 gap-6 md:gap-8">
+                        <div className="lg:col-span-4 flex flex-col lg:justify-between lg:h-[80%] pt-0 lg:pt-0 lg:pl-12 gap-4 md:gap-8">
                             <div className="flex flex-col justify-center flex-1 text-sm md:text-base lg:text-lg min-h-0">
                                 {/* Animated horizontal rule */}
                                 <h2 className="text-[10px] lg:text-xs uppercase tracking-widest text-black/40 font-semibold mb-3 lg:mb-5 flex items-center gap-4">
