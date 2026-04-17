@@ -14,7 +14,7 @@ const Contact = () => {
 
   const verifyMpin = async () => {
       try {
-         const res = await fetch('http://localhost:5000/api/auth/verify-mpin', {
+         const res = await fetch('https://pr-rj.onrender.com/api/auth/verify-mpin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ mpin })
@@ -44,7 +44,7 @@ const Contact = () => {
       setIsAttemptingLogin(true);
       setSubmitError('');
       try {
-        const response = await fetch('http://localhost:5000/api/auth/contact', {
+        const response = await fetch('https://pr-rj.onrender.com/api/auth/contact', {
            method: 'POST',
            headers: { 'Content-Type': 'application/json' },
            body: JSON.stringify(formData)
